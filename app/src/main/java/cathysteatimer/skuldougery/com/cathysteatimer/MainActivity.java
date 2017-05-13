@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void controlButtonHandler(View view)
     {
-        counterIsActive = counterIsActive ? false : true;
+        counterIsActive = !counterIsActive;
 
         if (counterIsActive)
         {
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateControls(int secondsLeft)
     {
-        int minutes = (int)(secondsLeft / 60);
+        int minutes = secondsLeft / 60;
         int seconds = secondsLeft - (minutes * 60);
 
         String formattedTime = String.format("%d:%02d", minutes, seconds);
